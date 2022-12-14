@@ -210,3 +210,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+function whatsappMesseging()
+{
+  var name = document.getElementById("uname").value;
+  var subject = document.getElementById("usubject").value;
+  var email = document.getElementById("uemail").value;
+  var message = document.getElementById("umessage").value;
+
+  var url = "https://wa.me/918019581959?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
+  window.open(url,'_blank').focus();
+}
