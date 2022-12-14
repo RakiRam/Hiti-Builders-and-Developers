@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function whatsappMesseging()
+function whatsappMesseging2()
 {
   var name = document.getElementById("uname").value;
   var subject = document.getElementById("usubject").value;
@@ -219,5 +219,15 @@ function whatsappMesseging()
   var message = document.getElementById("umessage").value;
 
   var url = "https://wa.me/918019581959?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
+  window.open(url,'_blank').focus();
+}
+function whatsappMesseging()
+{
+  var name = document.getElementById("pname").value;
+  var message = document.getElementById("pmessage").value;
+  var email = document.getElementById("pemail").value;
+  var phone = document.getElementById("pphone").value;
+
+  var url = "https://wa.me/918019581959?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Phone : "+phone+"%0a"+"Message : "+message;
   window.open(url,'_blank').focus();
 }
