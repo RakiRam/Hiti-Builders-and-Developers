@@ -1,9 +1,4 @@
-/**
-* Template Name: UpConstruction - v1.2.1
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
@@ -211,6 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// -----Quote Functions-----
+
 function whatsappMesseging2()
 {
   var name = document.getElementById("uname").value;
@@ -218,16 +215,49 @@ function whatsappMesseging2()
   var email = document.getElementById("uemail").value;
   var message = document.getElementById("umessage").value;
 
-  var url = "https://wa.me/918019581959?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
+  var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
   window.open(url,'_blank').focus();
 }
 function whatsappMesseging()
 {
+
   var name = document.getElementById("pname").value;
   var message = document.getElementById("pmessage").value;
-  var email = document.getElementById("pemail").value;
-  var phone = document.getElementById("pphone").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
 
-  var url = "https://wa.me/918019581959?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Phone : "+phone+"%0a"+"Message : "+message;
+  var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Phone : "+phone+"%0a"+"Message : "+message;
   window.open(url,'_blank').focus();
 }
+
+
+// -----VALIDATION-----
+
+
+document.querySelector("button").addEventListener("click", function(){
+  var name = document.getElementById("pname").value;
+  var message = document.getElementById("pmessage").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+
+  var uname = document.getElementById("uname").value;
+  var subject = document.getElementById("usubject").value;
+  var uemail = document.getElementById("uemail").value;
+  var umessage = document.getElementById("umessage").value;
+
+  if(name=='' || phone=='' || message=='' || email==''){
+    // document.getElementById("eresult").innerHTML = "All fields required"
+    return false;
+  }
+  else if(!email.includes("@")){
+    return false;
+  }
+  else if(isNaN(phone)){
+    return false;
+  }
+  else{
+    whatsappMesseging();
+    return true;
+    
+  }
+})
