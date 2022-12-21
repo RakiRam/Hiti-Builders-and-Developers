@@ -127,7 +127,7 @@
           </div>
 
           <div class="col-lg-5" data-aos="fade">
-            <form action="#" class="php-email-form">
+            <form action="javascript:void(0)" onsubmit="whatsappMesseging()" class="php-email-form">
               <h3>Get a quote</h3>
               <p>What's not Included in Package : Borewell, Interior Works, Special Designs in Elevation, Sump, Septic Tank and Compound wall.</p>
               <div class="row gy-3">
@@ -141,7 +141,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <input type="tel" id="phone" class="form-control" name="phone" placeholder="Phone" required>
+                  <input type="tel" id="phone" class="form-control" name="phone" placeholder="Phone" pattern="[7-9]{1}[0-9]{9}" required>
                 </div>
 
                 <div class="col-md-12">
@@ -149,10 +149,6 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
                   <button type="submit">Get a quote</button>
                 </div>
 

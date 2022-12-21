@@ -217,47 +217,48 @@ function whatsappMesseging2()
 
   var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
   window.open(url,'_blank').focus();
+  window.location.reload();
 }
 function whatsappMesseging()
 {
-
   var name = document.getElementById("pname").value;
   var message = document.getElementById("pmessage").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
 
   var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Phone : "+phone+"%0a"+"Message : "+message;
+  
   window.open(url,'_blank').focus();
+  window.location.reload();
 }
 
 
 // -----VALIDATION-----
 
 
-document.querySelector("button").addEventListener("click", function(){
-  var name = document.getElementById("pname").value;
-  var message = document.getElementById("pmessage").value;
-  var email = document.getElementById("email").value;
-  var phone = document.getElementById("phone").value;
+// document.querySelector("button").addEventListener("click", function(){
+//   var name = document.getElementById("pname").value;
+//   var message = document.getElementById("pmessage").value;
+//   var email = document.getElementById("email").value;
+//   var phone = document.getElementById("phone").value;
 
-  var uname = document.getElementById("uname").value;
-  var subject = document.getElementById("usubject").value;
-  var uemail = document.getElementById("uemail").value;
-  var umessage = document.getElementById("umessage").value;
+//   var uname = document.getElementById("uname").value;
+//   var subject = document.getElementById("usubject").value;
+//   var uemail = document.getElementById("uemail").value;
+//   var umessage = document.getElementById("umessage").value;
 
-  if(name=='' || phone=='' || message=='' || email==''){
-    // document.getElementById("eresult").innerHTML = "All fields required"
-    return false;
-  }
-  else if(!email.includes("@")){
-    return false;
-  }
-  else if(isNaN(phone)){
-    return false;
-  }
-  else{
-    whatsappMesseging();
-    return true;
-    
-  }
-})
+//   if(name=='' || phone=='' || message=='' || email==''){
+//     // document.getElementById("eresult").innerHTML = "All fields required"
+//     return false;
+//   }
+//   else if(!email.includes("@")){
+//     return false;
+//   }
+//   else if(isNaN(phone)){
+//     return false;
+//   }
+//   else{
+//     whatsappMesseging();
+//     return true;
+//   }
+// })
