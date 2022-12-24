@@ -270,9 +270,11 @@ function invokebot()
 function processMessage(query)
 {
   const botBrain = {
-    hello:"welcome",
-    hai:"some text",
-    bye:"manchidi dengey"
+    hello:"Welcome to Hiti Builders and Developers",
+    hai:"Welcome to Hiti Builders and Developers",
+    Hello:"Welcome to Hiti Builders and Developers",
+    Hi:"Welcome to Hiti Builders and Developers",
+    bye:"Thank You. Visit Again"
   }
   console.log(query);
   if(botBrain.hasOwnProperty(query))
@@ -281,9 +283,12 @@ function processMessage(query)
     newbmsg.innerHTML = botBrain[query];
     messagebox.appendChild(newbmsg);
   }
-  else if(query == "Services")
+  else if(query == "Services" || query == "services" || query == "service")
   {
-    window.location.href = "#";
+    window.location.href = "services.html";
+  }
+  else if(query == "About" || query == "about"){
+    window.location.href = "projects.html"
   }
   else{
     var newbmsg = bmsg.cloneNode(true);
