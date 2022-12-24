@@ -273,3 +273,19 @@ $(document).ready(function(){
 //     return true;
 //   }
 // })
+
+// ----------email-----------
+function sendEmail() {
+  Email.send({
+    Host: "smtp.mailtrap.io",
+    Username: "6390b231a8c58e",
+    Password: "dcf0c93ffb5e60",
+    To: 'manthenaramakrishna143@gmail.com',
+    From: "ramakrishnamlrit2019@gmail.com",
+    Subject: "Quote",
+    Body: "Hiti Builders",
+  })
+    .then(function (message) {
+      alert("mail sent successfully")
+    });
+  }
