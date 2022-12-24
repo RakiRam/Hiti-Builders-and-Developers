@@ -242,7 +242,18 @@ $(document).ready(function(){
       $(".Layout").hide();
          $(".chat_on").show(300);
   });
-  
+});
+
+
+var messages = ['dummy text about "About" hiti','hai','bye'];
+var bmsg = document.getElementById("botmsg");
+var umsg = document.getElementById("usermsg");
+messagebox = document.getElementsByClassName("Messages_list")[0];
+messages.forEach(msg => {
+  var newbmsg = bmsg.cloneNode(true);
+  newbmsg.innerHTML = msg;
+  messagebox.appendChild(newbmsg);
+  console.log(messagebox.innerHTML)
 });
 // -----VALIDATION-----
 

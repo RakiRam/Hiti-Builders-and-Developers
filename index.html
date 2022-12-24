@@ -34,20 +34,28 @@
 
 <body>
 
+  <!-- =========chat bot================ -->
 <div class="container">
 	<div class="row">
 	 <div id="Smallchat">
-    <div class="Layout Layout-open Layout-expand Layout-right" style="background-color: #3F51B5;color: rgb(255, 255, 255);opacity: 5;border-radius: 10px;">
+    <div class="Layout Layout-open Layout-expand Layout-left" style="background-color: rgba(254, 185, 0, 0.8);color: rgb(255, 255, 255);opacity: 5;border-radius: 10px;">
       <div class="Messenger_messenger">
-        <div class="Messenger_header" style="background-color: rgb(22, 46, 98); color: rgb(255, 255, 255);">
+        <div class="Messenger_header" style="background-color: rgba(254, 185, 0, 0.8); color: rgb(18, 18, 18);">
           <h4 class="Messenger_prompt">How can we help you?</h4> <span class="chat_close_icon"><i class="fa fa-window-close" aria-hidden="true"></i></span> </div>
         <div class="Messenger_content">
           <div class="Messages">
-            <div class="Messages_list"></div>
+            <div class="Messages_list">
+              <div id="botmsg" class="botmsg msg">
+                Welcome to hiti builders
+              </div>
+              <div id="usermsg" class="usermsg msg" style="margin-left: auto;">
+                About
+              </div>
+            </div>
           </div>
           <div class="Input Input-blank">
             <textarea class="Input_field" placeholder="Send a message..." style="height: 20px;"></textarea>
-            <button class="Input_button Input_button-emoji">
+            <!-- <button class="Input_button Input_button-emoji">
               <div class="Icon" style="width: 18px; height: 18px;">
                 <svg width="56px" height="56px" viewBox="1332 47 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px;">
                   <g id="emoji" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1332.000000, 47.000000)">
@@ -58,8 +66,8 @@
                   </g>
                 </svg>
               </div>
-            </button>
-            <button class="Input_button Input_button-send">
+            </button> -->
+            <button class="Input_button Input_button-send" onclick="">
               <div class="Icon" style="width: 18px; height: 18px;">
                 <svg width="57px" height="54px" viewBox="1496 193 57 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px;">
                   <g id="Group-9-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1523.000000, 220.000000) rotate(-270.000000) translate(-1523.000000, -220.000000) translate(1499.000000, 193.000000)">
