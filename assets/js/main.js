@@ -253,8 +253,58 @@ messages.forEach(msg => {
   var newbmsg = bmsg.cloneNode(true);
   newbmsg.innerHTML = msg;
   messagebox.appendChild(newbmsg);
-  console.log(messagebox.innerHTML)
+  messagebox.scrollTop = messagebox.scrollHeight; 
 });
+
+function invokebot()
+{
+  var query = document.getElementById("chatmsg");
+  var newumsg = umsg.cloneNode(true);
+  newumsg.class = "usermsg msg"
+  newumsg.innerHTML = query.value;
+  messagebox.appendChild(newumsg);
+  processMessage(query.value);
+  query.value = null;
+  messagebox.scrollTop = messagebox.scrollHeight; 
+}
+function processMessage(query)
+{
+  const botBrain = {
+    hello:"welcome",
+    hai:"some text",
+    bye:"manchidi dengey"
+  }
+  console.log(query);
+  if(botBrain.hasOwnProperty(query))
+  {
+    var newbmsg = bmsg.cloneNode(true);
+    newbmsg.innerHTML = botBrain[query];
+    messagebox.appendChild(newbmsg);
+  }
+  else if(query == "Services")
+  {
+    window.location.href = "#";
+  }
+  else{
+    var newbmsg = bmsg.cloneNode(true);
+    newbmsg.innerHTML = "No query found";
+    messagebox.appendChild(newbmsg);
+  }
+}
+
+function submitByEnter()
+{
+    if(event.key === 'Enter') {
+      var query = document.getElementById("chatmsg");
+      var newumsg = umsg.cloneNode(true);
+      newumsg.class = "usermsg msg"
+      newumsg.innerHTML = query.value;
+      messagebox.appendChild(newumsg);
+      processMessage(query.value);
+      query.value = null;
+      messagebox.scrollTop = messagebox.scrollHeight; 
+    }
+}
 // -----VALIDATION-----
 
 
