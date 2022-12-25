@@ -214,7 +214,7 @@ function whatsappMesseging2() {
   var email = document.getElementById("uemail").value;
   var message = document.getElementById("umessage").value;
 
-  var url = "https://wa.me/919963225811?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Subject : " + subject + "%0a" + "Message : " + message;
+  var url = "https://wa.me/919032077714?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Subject : " + subject + "%0a" + "Message : " + message;
   window.open(url, '_blank').focus();
   window.location.reload();
 }
@@ -224,7 +224,7 @@ function whatsappMesseging() {
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
 
-  var url = "https://wa.me/919963225811?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Phone : " + phone + "%0a" + "Message : " + message;
+  var url = "https://wa.me/919032077714?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Phone : " + phone + "%0a" + "Message : " + message;
 
   window.open(url, '_blank').focus();
   window.location.reload();
