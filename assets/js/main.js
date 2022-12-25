@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavHide = document.querySelector('.mobile-nav-hide');
 
   document.querySelectorAll('.mobile-nav-toggle').forEach(el => {
-    el.addEventListener('click', function(event) {
+    el.addEventListener('click', function (event) {
       event.preventDefault();
       mobileNavToogle();
     })
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navDropdowns = document.querySelectorAll('.navbar .dropdown > a');
 
   navDropdowns.forEach(el => {
-    el.addEventListener('click', function(event) {
+    el.addEventListener('click', function (event) {
       if (document.querySelector('.mobile-nav-active')) {
         event.preventDefault();
         this.classList.toggle('active');
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
-    const togglescrollTop = function() {
+    const togglescrollTop = function () {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
     window.addEventListener('load', togglescrollTop);
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       let menuFilters = document.querySelectorAll('.portfolio-isotope .portfolio-flters li');
-      menuFilters.forEach(function(el) {
-        el.addEventListener('click', function() {
+      menuFilters.forEach(function (el) {
+        el.addEventListener('click', function () {
           document.querySelector('.portfolio-isotope .portfolio-flters .filter-active').classList.remove('filter-active');
           this.classList.add('filter-active');
           portfolioIsotope.arrange({
@@ -208,44 +208,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // -----Quote Functions-----
 
-function whatsappMesseging2()
-{
+function whatsappMesseging2() {
   var name = document.getElementById("uname").value;
   var subject = document.getElementById("usubject").value;
   var email = document.getElementById("uemail").value;
   var message = document.getElementById("umessage").value;
 
-  var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Subject : "+subject+"%0a"+"Message : "+message;
-  window.open(url,'_blank').focus();
+  var url = "https://wa.me/919963225811?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Subject : " + subject + "%0a" + "Message : " + message;
+  window.open(url, '_blank').focus();
   window.location.reload();
 }
-function whatsappMesseging()
-{
+function whatsappMesseging() {
   var name = document.getElementById("pname").value;
   var message = document.getElementById("pmessage").value;
   var email = document.getElementById("email").value;
   var phone = document.getElementById("phone").value;
 
-  var url = "https://wa.me/919963225811?text="+"Name : "+ name + "%0a"+"Email : "+email+"%0a"+"Phone : "+phone+"%0a"+"Message : "+message;
-  
-  window.open(url,'_blank').focus();
+  var url = "https://wa.me/919963225811?text=" + "Name : " + name + "%0a" + "Email : " + email + "%0a" + "Phone : " + phone + "%0a" + "Message : " + message;
+
+  window.open(url, '_blank').focus();
   window.location.reload();
 }
 
-$(document).ready(function(){
-  $(".chat_on").click(function(){
-      $(".Layout").toggle();
-      $(".chat_on").hide(300);
+
+$(document).ready(function () {
+  $(".Layout").toggle();
+  $(".chat_on").hide(300);
+
+  $(".chat_on").click(function () {
+    $(".Layout").toggle();
+    $(".chat_on").hide(300);
   });
-  
-     $(".chat_close_icon").click(function(){
-      $(".Layout").hide();
-         $(".chat_on").show(300);
+
+  $(".chat_close_icon").click(function () {
+    $(".Layout").hide();
+    $(".chat_on").show(300);
   });
 });
 
 
-var messages = ['dummy text about "About" hiti','hai','bye'];
+var messages = ['dummy text about "About" hiti', 'hai', 'bye'];
 var bmsg = document.getElementById("botmsg");
 var umsg = document.getElementById("usermsg");
 messagebox = document.getElementsByClassName("Messages_list")[0];
@@ -253,11 +255,10 @@ messages.forEach(msg => {
   var newbmsg = bmsg.cloneNode(true);
   newbmsg.innerHTML = msg;
   messagebox.appendChild(newbmsg);
-  messagebox.scrollTop = messagebox.scrollHeight; 
+  messagebox.scrollTop = messagebox.scrollHeight;
 });
 
-function invokebot()
-{
+function invokebot() {
   var query = document.getElementById("chatmsg");
   var newumsg = umsg.cloneNode(true);
   newumsg.class = "usermsg msg"
@@ -265,50 +266,46 @@ function invokebot()
   messagebox.appendChild(newumsg);
   processMessage(query.value);
   query.value = null;
-  messagebox.scrollTop = messagebox.scrollHeight; 
+  messagebox.scrollTop = messagebox.scrollHeight;
 }
-function processMessage(query)
-{
+function processMessage(query) {
   const botBrain = {
-    hello:"Welcome to Hiti Builders and Developers",
-    hai:"Welcome to Hiti Builders and Developers",
-    Hello:"Welcome to Hiti Builders and Developers",
-    Hi:"Welcome to Hiti Builders and Developers",
-    bye:"Thank You. Visit Again"
+    hello: "Welcome to Hiti Builders and Developers",
+    hai: "Welcome to Hiti Builders and Developers",
+    Hello: "Welcome to Hiti Builders and Developers",
+    Hi: "Welcome to Hiti Builders and Developers",
+    bye: "Thank You. Visit Again"
   }
   console.log(query);
-  if(botBrain.hasOwnProperty(query))
-  {
+  if (botBrain.hasOwnProperty(query)) {
     var newbmsg = bmsg.cloneNode(true);
     newbmsg.innerHTML = botBrain[query];
     messagebox.appendChild(newbmsg);
   }
-  else if(query == "Services" || query == "services" || query == "service")
-  {
+  else if (query == "Services" || query == "services" || query == "service") {
     window.location.href = "services.html";
   }
-  else if(query == "About" || query == "about"){
+  else if (query == "About" || query == "about") {
     window.location.href = "projects.html"
   }
-  else{
+  else {
     var newbmsg = bmsg.cloneNode(true);
     newbmsg.innerHTML = "No query found";
     messagebox.appendChild(newbmsg);
   }
 }
 
-function submitByEnter()
-{
-    if(event.key === 'Enter') {
-      var query = document.getElementById("chatmsg");
-      var newumsg = umsg.cloneNode(true);
-      newumsg.class = "usermsg msg"
-      newumsg.innerHTML = query.value;
-      messagebox.appendChild(newumsg);
-      processMessage(query.value);
-      query.value = null;
-      messagebox.scrollTop = messagebox.scrollHeight; 
-    }
+function submitByEnter() {
+  if (event.key === 'Enter') {
+    var query = document.getElementById("chatmsg");
+    var newumsg = umsg.cloneNode(true);
+    newumsg.class = "usermsg msg"
+    newumsg.innerHTML = query.value;
+    messagebox.appendChild(newumsg);
+    processMessage(query.value);
+    query.value = null;
+    messagebox.scrollTop = messagebox.scrollHeight;
+  }
 }
 // -----VALIDATION-----
 
@@ -354,4 +351,4 @@ function sendEmail() {
     .then(function (message) {
       alert("mail sent successfully")
     });
-  }
+}
