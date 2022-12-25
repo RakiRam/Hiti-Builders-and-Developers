@@ -247,7 +247,7 @@ $(document).ready(function () {
 });
 
 
-var messages = ['dummy text about "About" hiti', 'hai', 'bye'];
+// var messages = ['dummy text about "About" hiti', 'hai', 'bye'];
 var bmsg = document.getElementById("botmsg");
 var umsg = document.getElementById("usermsg");
 messagebox = document.getElementsByClassName("Messages_list")[0];
@@ -274,7 +274,10 @@ function processMessage(query) {
     hai: "Welcome to Hiti Builders and Developers",
     Hello: "Welcome to Hiti Builders and Developers",
     Hi: "Welcome to Hiti Builders and Developers",
-    bye: "Thank You. Visit Again"
+    bye: "Thank You. Visit Again",
+    Bye: "Thank You. Visit Again",
+    Exit: "Thank You. Visit Again",
+    exit: "Thank You. Visit Again",
   }
   console.log(query);
   if (botBrain.hasOwnProperty(query)) {
@@ -290,7 +293,7 @@ function processMessage(query) {
   }
   else {
     var newbmsg = bmsg.cloneNode(true);
-    newbmsg.innerHTML = "No query found";
+    newbmsg.innerHTML = "Please Contact +919032077714 for more details.";
     messagebox.appendChild(newbmsg);
   }
 }
