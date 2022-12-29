@@ -285,11 +285,23 @@ function processMessage(query) {
     newbmsg.innerHTML = botBrain[query];
     messagebox.appendChild(newbmsg);
   }
-  else if (query == "Services" || query == "services" || query == "service") {
+  else if (query.toUpperCase().includes("SERVICES")) {
     window.location.href = "services.html";
   }
-  else if (query == "About" || query == "about") {
-    window.location.href = "projects.html"
+  else if(query.toUpperCase().includes("QUERY")){
+    window.location.href = "index.html";
+  }
+  else if(query.toUpperCase().includes("HELP")){
+    window.location.href = "contact.html";
+  }
+  else if(query.toUpperCase().includes("PROJECTS") || query.toUpperCase().includes("CONSTRUCTIONS")){
+    window.location.href = "projects.html";
+  }
+  else if(query.toUpperCase().includes("MANAGEMENT")){
+    window.location.href = "management.html";
+  }
+  else if (query.toUpperCase().includes("ABOUT")) {
+    window.location.href = "about.html"
   }
   else {
     var newbmsg = bmsg.cloneNode(true);
