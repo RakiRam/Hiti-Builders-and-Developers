@@ -270,15 +270,15 @@ function invokebot() {
 }
 function processMessage(query) {
   const botBrain = {
-    hello: "Welcome to Hiti Builders and Developers",
-    hai: "Welcome to Hiti Builders and Developers",
-    Hello: "Welcome to Hiti Builders and Developers",
-    Hi: "Welcome to Hiti Builders and Developers",
-    bye: "Thank You. Visit Again",
-    Bye: "Thank You. Visit Again",
-    Exit: "Thank You. Visit Again",
-    exit: "Thank You. Visit Again",
-    about: "HITI Builders are known for innovating, meticulous planning & designing, bringing in seasoned architects, consultants from the industry, opting for new technologies, and being reasonable in pricing value and relationship with clients, HITI Builders is known for taking on new concepts, meticulous planning & designing to the next level.",
+    hello: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
+    hi: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
+    Hello: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
+    Hi: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
+    bye: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
+    Bye: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
+    Exit: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
+    exit: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
+    // about: "HITI Builders are known for innovating, meticulous planning & designing, bringing in seasoned architects, consultants from the industry, opting for new technologies, and being reasonable in pricing value and relationship with clients, HITI Builders is known for taking on new concepts, meticulous planning & designing to the next level.",
   }
   console.log(query);
   if (botBrain.hasOwnProperty(query)) {
@@ -303,7 +303,7 @@ function processMessage(query) {
   }
   else {
     var newbmsg = bmsg.cloneNode(true);
-    newbmsg.innerHTML = "Please Contact +919032077714 for more details.";
+    newbmsg.innerHTML = "For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.";
     messagebox.appendChild(newbmsg);
   }
 }

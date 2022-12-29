@@ -3023,17 +3023,17 @@ section {
 
 .msg{
   display: absolute;
-  max-width: 50%;
+  max-width: 90%;
   width: auto;
-  border: 1px solid black;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
-  background-color: rgba(18, 198, 248, 0.8);
+  background-color: rgb(255, 255, 255);
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 15px;
   padding: 3px 15px;
-  font-size: x-small;
-  color: rgba(0, 0, 0, 0.667);
+  font-size:small;
+  color: rgb(0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .usermsg{
