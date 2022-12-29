@@ -2695,7 +2695,7 @@ section {
 
 
 /*===========================
-     CHAT BOOT MESSENGER
+     CHAT BOT MESSENGER
    ===========================*/
    #Smallchat .Messages, #Smallchat .Messages_list {
     -webkit-box-flex: 1;
@@ -2726,7 +2726,7 @@ section {
     height: 45px;
     right: 15px;
     bottom: 20px;
-    background-color: rgba(254, 185, 0, 0.8);
+    background-color: rgba(223, 217, 201, 0.8);
     color: #fff;
     border-radius: 30%;
     text-align: center;
@@ -2756,7 +2756,7 @@ section {
  bottom:20px;
  min-width:50px;
  max-width:300px;
- max-height:30px;
+ max-height:300px;
  display:-webkit-box;
  display:-webkit-flex;
  display:-ms-flexbox;
@@ -2799,7 +2799,8 @@ section {
 }
 
 #Smallchat .Layout-expand {
-      height: 400px;
+    height: 600px;
+    min-width: 400px;
     min-height: 400px;
     display: none;
 }
@@ -2984,8 +2985,8 @@ section {
     border: none;
     outline: none;
     padding: 0;
-        padding-right: 0px;
-        padding-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
     padding-left: 20px;
     padding-right: 75px;
     background-color: transparent;
@@ -3031,12 +3032,15 @@ section {
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 15px;
+  margin-bottom: 10px;
   padding: 3px 15px;
   font-size:small;
   color: rgb(0, 0, 0);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  word-wrap: break-word;
 }
 .usermsg{
+  max-width: 70%;
   float: left;
 }
 .botmsg{

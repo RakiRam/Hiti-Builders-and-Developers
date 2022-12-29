@@ -34,7 +34,7 @@
 
 </head>
 
-<body>
+<body onload="showdiv();">
 
 
 
@@ -96,21 +96,24 @@
     </div>
   </header><!-- End Header -->
   <!-- =========chat bot================ -->
-  <div class="container">
+  <div class="container" >
     <div class="row">
      <div id="Smallchat">
       <div class="Layout Layout-open Layout-expand Layout-right" style="background-color: rgba(216, 225, 228, 0.923);color: rgba(242, 244, 245, 0.8);opacity: 5;border-radius: 10px;">
         <div class="Messenger_messenger">
           <div class="Messenger_header" style="background-color: rgba(9, 131, 237, 0.822); color: rgb(18, 18, 18);">
-            <h4 class="Messenger_prompt" style="color: white;">Hiti Builders Help Desk</h4> <span class="chat_close_icon"><i class="fa fa-window-close" aria-hidden="true"></i></span> 
+            <h4 class="Messenger_prompt" style="color: white;">Hiti Builders Help Desk</h4> <span class="chat_close_icon"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+            <h6 class="Messenger_prompt" style="color: white; font-size:small">We are online to assist you</h6>
           </div>
 
           <div class="Messenger_content">
             <div class="Messages">
               <div class="Messages_list">
                 <div id="botmsg" class="botmsg msg">
-                  <h6 style="font-size: small; font-weight:bold ;color:black;">HITI BUILDERS: </h6>
-                  <h6 style="font-size: small;font-weight:normal; color:black;">Greetings from Hiti Builders help desk. Wear Mask, Stay Safe</h6><br>
+                  <h6 style="font-size: small; font-weight:bold ;color:black; display:inline">HITI BUILDERS: </h6>
+                  <h6 style="font-size: small;font-weight:normal; color:black; display:inline">Greetings from Hiti Builders help desk. Wear Mask, Stay Safe</h6>
+                </div> 
+                <div id="botmsg" class="botmsg msg">
                   <h6 style="font-size: small;font-weight:normal; color:black;">Welcome to Hiti Builders and developers. We develop quality infrastructure and real estate projects since 2020.</h6>
                 </div>  
                 <div id="usermsg" class="usermsg msg" style="margin-left: auto;float: right;">

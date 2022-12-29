@@ -251,12 +251,12 @@ $(document).ready(function () {
 var bmsg = document.getElementById("botmsg");
 var umsg = document.getElementById("usermsg");
 messagebox = document.getElementsByClassName("Messages_list")[0];
-messages.forEach(msg => {
-  var newbmsg = bmsg.cloneNode(true);
-  newbmsg.innerHTML = msg;
-  messagebox.appendChild(newbmsg);
-  messagebox.scrollTop = messagebox.scrollHeight;
-});
+// messages.forEach(msg => {
+//   var newbmsg = bmsg.cloneNode(true);
+//   newbmsg.innerHTML = msg;
+//   messagebox.appendChild(newbmsg);
+//   messagebox.scrollTop = messagebox.scrollHeight;
+// });
 
 function invokebot() {
   var query = document.getElementById("chatmsg");
@@ -322,6 +322,13 @@ function submitByEnter() {
     query.value = null;
     messagebox.scrollTop = messagebox.scrollHeight;
   }
+}
+
+
+function showdiv() {
+  setTimeout(function () {
+      document.getElementsByClassName("botmsg msg").style.visibility = "visible";
+  }, 5000);
 }
 // -----VALIDATION-----
 
