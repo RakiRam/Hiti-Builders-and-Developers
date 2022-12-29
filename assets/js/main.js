@@ -278,6 +278,7 @@ function processMessage(query) {
     Bye: "Thank You. Visit Again",
     Exit: "Thank You. Visit Again",
     exit: "Thank You. Visit Again",
+    about: "HITI Builders are known for innovating, meticulous planning & designing, bringing in seasoned architects, consultants from the industry, opting for new technologies, and being reasonable in pricing value and relationship with clients, HITI Builders is known for taking on new concepts, meticulous planning & designing to the next level.",
   }
   console.log(query);
   if (botBrain.hasOwnProperty(query)) {
@@ -299,9 +300,6 @@ function processMessage(query) {
   }
   else if(query.toUpperCase().includes("MANAGEMENT")){
     window.location.href = "management.html";
-  }
-  else if (query.toUpperCase().includes("ABOUT")) {
-    window.location.href = "about.html"
   }
   else {
     var newbmsg = bmsg.cloneNode(true);
