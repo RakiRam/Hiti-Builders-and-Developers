@@ -301,6 +301,9 @@ function processMessage(query) {
   else if(query.toUpperCase().includes("MANAGEMENT")){
     window.location.href = "management.html";
   }
+  else if(query.toUpperCase().includes("ABOUT")){
+    window.location.href = "about.html";
+  }
   else {
     var newbmsg = bmsg.cloneNode(true);
     newbmsg.innerHTML = "For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.";
