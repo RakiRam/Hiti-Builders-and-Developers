@@ -2714,7 +2714,7 @@ section {
 .chat_close_icon {
    cursor:pointer;
     color: #fff;
-    font-size:16px;
+    font-size:27px;
     position: absolute;
     right: 12px;
     z-index: 9;
@@ -2872,9 +2872,20 @@ section {
  -ms-flex-negative:0;
  flex-shrink:0
 }
+.options{
+  color: black;
+  border: 2px solid rgb(67, 67, 67);
+   padding: 2px 15px;
+   border-radius: 50px; 
+   background-color: #feb900;
+   color: rgb(55, 55, 55);
+}
+.options:hover{
+  box-shadow: rgba(255, 191, 0, 0.35) 0px 5px 15px;
+}
 
 
-#Smallchat .Messenger_header h4 {
+#Smallchat .Messenger_header Messenger_prompt {
  opacity:0;
  font-size:16px;
  -webkit-animation:slidein .15s .3s;
@@ -2885,7 +2896,7 @@ section {
 
 #Smallchat .Messenger_prompt {
  margin:0;
- font-size:16px;
+ font-size:20px;
  line-height:18px;
  font-weight:400;
  overflow:hidden;
