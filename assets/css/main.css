@@ -2800,7 +2800,7 @@ section {
 
 #Smallchat .Layout-expand {
     height: 600px;
-    min-width: 400px;
+    /* min-width: 400px; */
     min-height: 400px;
     display: none;
 }
