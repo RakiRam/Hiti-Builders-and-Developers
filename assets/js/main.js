@@ -375,3 +375,5 @@ function sendEmail() {
       alert("mail sent successfully")
     });
 }
+
+
