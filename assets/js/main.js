@@ -132,24 +132,33 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Init swiper slider with 1 slide at once in desktop view
    */
-  new Swiper('.slides-1', {
+ document.querySelectorAll('.slides-1').forEach((slider) => {
+  const slideCount = slider.querySelectorAll('.swiper-slide').length;
+
+  new Swiper(slider, {
     speed: 600,
-    loop: true,
-    autoplay: {
+
+    loop: slideCount > 1,          // 🔑 only loop if multiple slides
+    autoplay: slideCount > 1 ? {
       delay: 5000,
       disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
+    } : false,
+
+    slidesPerView: 1,
+
+    pagination: slideCount > 1 ? {
+      el: slider.querySelector('.swiper-pagination'),
       type: 'bullets',
       clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
+    } : false,
+
+    navigation: slideCount > 1 ? {
+      nextEl: slider.querySelector('.swiper-button-next'),
+      prevEl: slider.querySelector('.swiper-button-prev'),
+    } : false
   });
+});
+
 
   /**
    * Init swiper slider with 2 slides at once in desktop view
