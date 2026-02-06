@@ -241,18 +241,25 @@ function whatsappMesseging() {
 
 
 $(document).ready(function () {
-  $(".Layout").toggle();
-  $(".chat_on").hide(300);
 
-  $(".chat_on").click(function () {
-    $(".Layout").toggle();
-    $(".chat_on").hide(300);
+  const layout = $(".Layout");
+  const bubble = $(".chat_on");
+
+  layout.hide();
+  bubble.show();
+
+  // open chat
+  bubble.click(function () {
+    layout.show().addClass("active");
+    bubble.hide();
   });
 
+  // close chat
   $(".chat_close_icon").click(function () {
-    $(".Layout").hide();
-    $(".chat_on").show(300);
+    layout.removeClass("active").hide();
+    bubble.show();
   });
+
 });
 
 
@@ -278,46 +285,57 @@ function invokebot() {
   messagebox.scrollTop = messagebox.scrollHeight;
 }
 function processMessage(query) {
+
+  query = query.trim().toLowerCase(); // normalize text
+
   const botBrain = {
-    hello: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
-    hi: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
-    Hello: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
-    Hi: "Hi Welcome to Hiti Builders and Developers. How may we help you?",
-    bye: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
-    Bye: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
-    Exit: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
-    exit: "Thank You. Visit Again. For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.",
-    // about: "HITI Builders are known for innovating, meticulous planning & designing, bringing in seasoned architects, consultants from the industry, opting for new technologies, and being reasonable in pricing value and relationship with clients, HITI Builders is known for taking on new concepts, meticulous planning & designing to the next level.",
-  }
-  console.log(query);
-  if (botBrain.hasOwnProperty(query)) {
+    hello: "Hi 👋 Welcome to Hiti Builders and Developers. How may we help you?",
+    hi: "Hi 👋 Welcome to Hiti Builders and Developers. How may we help you?",
+    bye: "Thank you! Visit again. Call us at +919032077714.",
+    exit: "Thank you! Visit again. Call us at +919032077714."
+  };
+
+  // typing indicator
+  var typing = bmsg.cloneNode(true);
+  typing.innerHTML = '<span class="typing"><span>.</span><span>.</span><span>.</span></span>';
+  messagebox.appendChild(typing);
+  messagebox.scrollTop = messagebox.scrollHeight;
+
+  setTimeout(() => {
+
+    typing.remove();
+
+    var reply = "";
+
+    // direct match
+    if (botBrain[query]) {
+      reply = botBrain[query];
+    }
+    // keyword routing
+    else if (query.includes("service")) {
+      window.location.href = "services.html";
+      return;
+    }
+    else if (query.includes("project")) {
+      window.location.href = "projects.html";
+      return;
+    }
+    else if (query.includes("contact") || query.includes("help")) {
+      window.location.href = "contact.html";
+      return;
+    }
+    // default reply (IMPORTANT)
+    else {
+      reply = "Thanks for reaching out! 😊 Please call us or visit Contact page for more details.";
+    }
+
     var newbmsg = bmsg.cloneNode(true);
-    newbmsg.innerHTML = botBrain[query];
+    newbmsg.innerHTML = reply;
     messagebox.appendChild(newbmsg);
-  }
-  else if (query.toUpperCase().includes("SERVICES")) {
-    window.location.href = "services.html";
-  }
-  else if(query.toUpperCase().includes("QUERY")){
-    window.location.href = "index.html";
-  }
-  else if(query.toUpperCase().includes("HELP")){
-    window.location.href = "contact.html";
-  }
-  else if(query.toUpperCase().includes("PROJECTS") || query.toUpperCase().includes("CONSTRUCTIONS")){
-    window.location.href = "projects.html";
-  }
-  else if(query.toUpperCase().includes("MANAGEMENT")){
-    window.location.href = "management.html";
-  }
-  else if(query.toUpperCase().includes("ABOUT")){
-    window.location.href = "about.html";
-  }
-  else {
-    var newbmsg = bmsg.cloneNode(true);
-    newbmsg.innerHTML = "For more information, please email us at support@hitibuilders.com or call at +919032077714, +919154157166.";
-    messagebox.appendChild(newbmsg);
-  }
+
+    messagebox.scrollTop = messagebox.scrollHeight;
+
+  }, 600);
 }
 
 function submitByEnter() {
@@ -384,5 +402,62 @@ function sendEmail() {
       alert("mail sent successfully")
     });
 }
+
+function openWhatsApp() {
+  const page = document.title;
+
+  const msg =
+    "Hi. Greetings from Hiti Builders %0A" +
+    "Please share details.";
+
+  window.open(
+    "https://wa.me/919032077714?text=" + msg,
+    "_blank"
+  );
+}
+
+// bounce after 5s if user didn't open chat
+setTimeout(() => {
+  if (!$(".Layout").hasClass("active")) {
+    $(".chat_on").addClass("bounce");
+  }
+}, 5000);
+
+// stop bounce when clicked
+$(".chat_on").click(function () {
+  $(this).removeClass("bounce");
+});
+
+function openLeadForm() {
+  document.getElementById("leadFormBox").style.display = "flex";
+}
+
+function submitLead() {
+
+  const name = document.getElementById("leadName").value;
+  const phone = document.getElementById("leadPhone").value;
+  const msg = document.getElementById("leadMsg").value;
+
+  if (!name || !phone) {
+    alert("Please enter name & phone");
+    return;
+  }
+
+  const text =
+    "New Lead from Website 👋%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Message: " + msg;
+
+  window.open(
+    "https://wa.me/919032077714?text=" + text,
+    "_blank"
+  );
+
+  // success message
+  const box = document.getElementById("leadFormBox");
+  box.innerHTML = "✅ Thanks! We'll contact you shortly.";
+}
+
 
 

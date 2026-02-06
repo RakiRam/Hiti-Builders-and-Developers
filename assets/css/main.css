@@ -105,6 +105,22 @@ section {
     max-width: 60%;
   }
 }
+.stats-item,
+.card,
+.service-item {
+  transition: all 0.35s ease;
+}
+
+.stats-item:hover,
+.card:hover,
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -2724,8 +2740,8 @@ section {
     z-index: 10;
     width: 45px;
     height: 45px;
-    right: 15px;
-    bottom: 20px;
+    right: 25px;
+    bottom: 25px;
     background-color: rgba(18, 118, 240, 0.818);
     color: #fff;
     border-radius: 30%;
@@ -3074,3 +3090,221 @@ section {
 .botmsg{
   float: right;
 }
+/* ===============================
+   CHATBOT PREMIUM UI
+================================ */
+
+/* floating button */
+.chat_on {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  animation: floatChat 3s ease-in-out infinite;
+}
+
+/* soft floating effect */
+@keyframes floatChat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* chat panel */
+.Layout {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 320px;
+  max-height: 500px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+/* visible state */
+.Layout.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* message animation */
+.msg {
+  animation: msgFade 0.35s ease;
+}
+
+@keyframes msgFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* bot typing dots */
+.typing {
+  display: inline-block;
+}
+
+.typing span {
+  animation: blink 1.4s infinite both;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: .2s;
+}
+.typing span:nth-child(3) {
+  animation-delay: .4s;
+}
+
+@keyframes blink {
+  0% {opacity: .2;}
+  20% {opacity: 1;}
+  100% {opacity: .2;}
+}
+
+/* HERO MODERN */
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* slow cinematic zoom */
+.hero .carousel-item {
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+
+.service-item {
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;      /* move to right side */
+  bottom: 95px;     /* sit ABOVE chatbot */
+  background: #25d366;
+  color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 26px;
+  z-index: 9998;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+section {
+  padding: 110px 0;
+}
+
+.whatsapp-float:hover,
+.chat_on:hover,
+.scroll-top:hover {
+  transform: scale(1.08);
+}
+
+@media(max-width:768px){
+  .whatsapp-float { bottom: 85px; }
+  .chat_on { bottom: 20px; }
+}
+
+.bounce {
+  animation: bounceChat 1.8s infinite;
+}
+
+@keyframes bounceChat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* CHAT LEAD FORM */
+/* CHATBOT BUTTONS – BLUE STYLE */
+.chat-options button {
+  background: transparent;
+  border: 2px solid #0d6efd;   /* Bootstrap primary blue */
+  color: #0d6efd;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-options button:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+
+
+.lead-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+}
+
+.lead-form-box input,
+.lead-form-box textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 12px;
+}
+
+/* CHATBOT LEAD SUBMIT BUTTON */
+/* CHATBOT LEAD SUBMIT – BLUE */
+.lead-form-box button {
+  background: transparent;
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  padding: 8px;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lead-form-box button:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.lead-form-box input:focus,
+.lead-form-box textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 1px rgba(13,110,253,0.35);
+}
+
+

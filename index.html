@@ -138,6 +138,21 @@
                       Hiti Builders and developers. We develop quality infrastructure and real estate projects since
                       2020.</p>
                   </div>
+                  <div class="botmsg msg" id="leadPrompt">
+                  <p>Need a free quote or callback?</p>
+
+                  <div class="chat-options">
+                    <button onclick="openLeadForm()">Yes 👍</button>
+                    <button onclick="window.location.href='projects.html'">View Projects</button>
+                  </div>
+                </div>
+
+                <div id="leadFormBox" class="lead-form-box" style="display:none;">
+                  <input type="text" id="leadName" placeholder="Your Name">
+                  <input type="tel" id="leadPhone" placeholder="Phone Number">
+                  <textarea id="leadMsg" placeholder="Requirement"></textarea>
+                  <button onclick="submitLead()">Submit</button>
+                </div>
                   <div id="usermsg" class="usermsg msg" style="margin-left: auto;float: right;">
                     <p style="font-size: 13px;">Please select one of the options to know more, or ask your own question
                       <br>
@@ -189,14 +204,21 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">Welcome</h2>
-            <div id="MainParagraph" style="color: aliceblue; ">HITI BUILDERS & DEVELOPERS was incorporated in 2022 with
-              the idea of offering contemporary spaces to
-              live, work, play and grow. Starting from developing homes for the middle and lower income groups, the
-              Company is today developing large townships, retail and office spaces and also luxurious villas &
-              apartments for HNI Individuals. The company has earned a reputation for quality construction and its
-              ability to keep commitments and timely Schedules.</div>
-            <a data-aos="fade-up" data-aos-delay="200" href="#get-started" class="btn-get-started">Get A Quote</a>
+            <h1 class="hero-title" data-aos="fade-down">
+              Building Trust<br>
+              Creating Landmarks
+            </h1>
+
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="150">
+              Premium residential & commercial constructions with quality,
+              transparency and on-time delivery.
+            </p>
+
+            <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+              <a href="#get-started" class="btn-get-started me-3">Get a Quote</a>
+              <a href="projects.html" class="btn-get-started me-3">View Projects</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -221,6 +243,43 @@
     </div>
 
   </section><!-- End Hero Section -->
+
+  <section class="stats-counter section-bg">
+  <div class="container">
+    <div class="row gy-4 text-center">
+
+      <div class="col-lg-3 col-6">
+        <div class="stats-item fade-up">
+          <span data-purecounter-start="0" data-purecounter-end="50" class="purecounter"></span>
+          <p>Projects Delivered</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-6">
+        <div class="stats-item fade-up">
+          <span data-purecounter-start="0" data-purecounter-end="120" class="purecounter"></span>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-6">
+        <div class="stats-item fade-up">
+          <span data-purecounter-start="0" data-purecounter-end="15" class="purecounter"></span>
+          <p>Years Experience</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-6">
+        <div class="stats-item fade-up">
+          <span data-purecounter-start="0" data-purecounter-end="24" class="purecounter"></span>
+          <p>Support Hours</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
 
   <main id="main">
 
@@ -439,6 +498,87 @@
             </div>
             <!-- End testimonial item -->
 
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/team/user.png" class="testimonial-img" alt="">
+                  <h3>Ms. Lalitha</h3>
+                  <h4>G+1 Residential Building Client</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    HITI Builders turned our dream home into reality. From the foundation to the finishing touches, their attention to detail and commitment to quality impressed us every step of the way.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/team/user.png" class="testimonial-img" alt="">
+                  <h3>GNK Consultants</h3>
+                  <h4>Office Building Client</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    Our office building was completed ahead of schedule without compromising on quality. HITI Builders managed the project seamlessly and delivered a space that perfectly suits our business needs.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/team/user.png" class="testimonial-img" alt="">
+                  <h3>Ms. Ashritha</h3>
+                  <h4>G+2 Duplex Client</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    As first-time homeowners, we were nervous about the process. HITI Builders guided us patiently, explained every step, and built a home that feels safe, beautiful, and lasting.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="assets/img/team/user.png" class="testimonial-img" alt="">
+                  <h3>Ms. Harsha</h3>
+                  <h4>Farmhouse Villa</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    The craftsmanship in our villa is outstanding. HITI Builders combined elegance with durability, and the result is a home we're proud to show off.
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+
+
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -533,6 +673,12 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <a href="#"
+   class="whatsapp-float"
+   onclick="openWhatsApp()">
+   <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
 </body>
 
